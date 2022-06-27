@@ -12,6 +12,8 @@ import { NoFoundComponent } from './pages/no-found/no-found.component';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar'
 
 @NgModule({
     declarations: [
@@ -20,7 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
         LoginComponent,
         RegisterComponent,
         ProfileComponent,
-        NoFoundComponent
+        NoFoundComponent,
+        NavbarComponent
     ],
     imports: [
         BrowserModule,
@@ -28,7 +31,8 @@ import { MatIconModule } from '@angular/material/icon';
         DragDropModule,
         BrowserAnimationsModule,
         NgbModule,
-        MatIconModule
+        MatIconModule,
+        MatToolbarModule
     ],
     providers: [],
     bootstrap: [AppComponent]
