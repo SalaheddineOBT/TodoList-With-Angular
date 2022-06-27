@@ -13,7 +13,7 @@ export class WidgetService {
 
     Toast(message: any,type: any){
         this.snackbar.open(message,'',{
-            duration: 4000000,
+            duration: 4000,
             horizontalPosition: 'center',
             panelClass: [type]
         });

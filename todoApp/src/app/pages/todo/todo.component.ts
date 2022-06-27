@@ -71,4 +71,13 @@ export class TodoComponent implements OnInit {
         alert('hil')
     }
 
+    AddTask(){
+        if(this.task.valid){
+            this.todoData.push(this.task.get('task')?.value);
+            this.initForm();
+        }else{
+            this.widget.Toast('Fill Required Field !','danger');
+        }
+    }
+
 }
