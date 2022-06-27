@@ -26,13 +26,17 @@ export class FormValidationService {
         ?
         `Password contain at least ${this.getLengthError(fieldErrors?.minlength)} characters !`
         :
+        formField?.hasError('minlength') && fieldName === 'task'
+        ?
+        `Task Must contain at least ${this.getLengthError(fieldErrors?.minlength)} characters !`
+        :
         formField?.hasError('maxlength') && fieldName === 'password'
         ?
         `Password contain max ${this.getLengthError(fieldErrors?.maxlength)} characters !`
         :
         formField?.hasError('minlength') && fieldName === 'username'
         ?
-        `User Name contain at least ${this.getLengthError(fieldErrors?.minlength)} characters !`
+        `User Name contain at least ${this.getLengthErrors(fieldErrors?.minlength)} characters !`
         :
         formField?.hasError('maxlength') && fieldName === 'username'
         ?
@@ -59,5 +63,8 @@ export class FormValidationService {
 
     private getLengthError(fieldError: any): string {
         return `(${fieldError?.actualLength}/${fieldError?.requiredLength})`;
+    }
+    private getLengthErrors(fieldError: any): string {
+        return `${fieldError?.requiredLength})`;
     }
 }
