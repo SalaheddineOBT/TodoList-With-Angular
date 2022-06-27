@@ -19,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormValidationService } from './services/form-validator/form-validation.service';
 
 @NgModule({
     declarations: [
@@ -44,7 +45,9 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatButtonModule,
         ReactiveFormsModule
     ],
-    providers: [],
+    providers: [
+        FormValidationService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
