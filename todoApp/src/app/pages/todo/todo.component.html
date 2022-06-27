@@ -59,17 +59,17 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3" style="background-color: #cddfe981;height: 93vh;padding-top: 1rem;">
+        <div class="col-md-3" style="background-color: #0D5B97;height: 94vh;padding-top: 1rem;">
             <div>
                 <mat-card>
-                    <form>
+                    <form [formGroup]="task">
                         <mat-form-field appearance="outline">
                             <mat-label>Task Name</mat-label>
-                            <input matInput>
-                            <mat-icon matSuffix>article</mat-icon>
+                            <input matInput formControlName="task" />
+                            <mat-icon style="color: #0D5B97;" matSuffix>article</mat-icon>
                             <mat-hint>Add New Task To Your Todo List !</mat-hint>
                         </mat-form-field>
-                        <button mat-flat-button type="button" color="primary">Add Task</button>
+                        <button mat-flat-button type="button" style="background: #0D5B97;color: white;">Add Task</button>
                     </form>
                 </mat-card>
             </div>
