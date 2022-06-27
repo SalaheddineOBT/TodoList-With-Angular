@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormValidationService } from 'src/app/services/form-validator/form-validation.service';
 
 @Component({
     selector: 'app-todo',
@@ -12,7 +13,8 @@ export class TodoComponent implements OnInit {
     task!: FormGroup;
 
     constructor(
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        private formValidationService: FormValidationService
     ) {
         this.initForm();
     }
@@ -46,6 +48,17 @@ export class TodoComponent implements OnInit {
                 event.currentIndex,
             );
         }
+    }
+
+    fieldHasError(fieldName: string) {
+        return this.formValidationService.fieldHasError(fieldName, this.task);
+    }
+
+    getErrorMessage(fieldName: string) {
+        return this.formValidationService.getErrorMessage(
+            fieldName,
+            this.task
+        );
     }
 
 }

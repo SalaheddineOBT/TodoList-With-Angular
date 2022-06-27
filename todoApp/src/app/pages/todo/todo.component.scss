@@ -70,4 +70,24 @@
     .mat-form-field-appearance-outline .mat-form-field-outline {
         color: #0D5B97;
     }
+
+    .mat-form-field-appearance-outline .mat-form-field-wrapper{
+        padding-bottom: .4rem;
+    }
+}
+
+.card-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h5{
+        font-weight: 600;
+        font-size: 1rem;
+    }
+}
+
+.field{
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
 }
