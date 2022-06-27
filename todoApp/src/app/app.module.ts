@@ -10,6 +10,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { NoFoundComponent } from './pages/no-found/no-found.component';
 import { DragDropModule} from '@angular/cdk/drag-drop';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { DragDropModule} from '@angular/cdk/drag-drop';
         BrowserModule,
         AppRoutingModule,
         DragDropModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        NgbModule
     ],
     providers: [],
     bootstrap: [AppComponent]
