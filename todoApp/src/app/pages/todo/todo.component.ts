@@ -69,7 +69,7 @@ export class TodoComponent implements OnInit {
     }
 
     async delete(where:string,index: number){
-        const m = await this.widget.ConfirmAlert('its question test ?');
+        const m = await this.widget.ConfirmAlert('Are You Sure You Want To Delete This Task ?');
         if(m){
             if(where === "toDo"){
                 this.todoData.splice(index,1);
