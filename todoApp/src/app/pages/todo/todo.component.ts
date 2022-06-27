@@ -68,10 +68,14 @@ export class TodoComponent implements OnInit {
         );
     }
 
-    async delete(index: number){
+    async delete(where:string,index: number){
         const m = await this.widget.ConfirmAlert('its question test ?');
         if(m){
-            this.todoData.splice(index,1);
+            if(where === "toDo"){
+                this.todoData.splice(index,1);
+            }else if(where === "onDoing") {
+                this.onDoingData.splice(index,1);
+            }
         }
     }
 
