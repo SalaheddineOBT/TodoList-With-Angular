@@ -36,8 +36,8 @@
                             <div class="box" *ngFor="let item of todoData" cdkDrag>
                                 <span>{{item}}</span>
                                 <div class="buttons">
-                                    <mat-icon style="color: #0D5B97;">edit</mat-icon>
-                                    <mat-icon style="color: #0D5B97;">delete</mat-icon>
+                                    <mat-icon style="color: #0D5B97;" (click)="edit()">edit</mat-icon>
+                                    <mat-icon style="color: #0D5B97;" (click)="delete()">delete</mat-icon>
                                 </div>
                             </div>
                         </div>

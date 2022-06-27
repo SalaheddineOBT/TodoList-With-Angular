@@ -63,6 +63,12 @@ export class TodoComponent implements OnInit {
         );
     }
 
+    delete(){
+        alert('hil')
+    }
 
+    edit(){
+        alert('hil')
+    }
 
 }
