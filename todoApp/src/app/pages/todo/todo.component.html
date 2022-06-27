@@ -1,1 +1,40 @@
-<p>todo works!</p>
+<div cdkDropListGroup class="container-parent">
+
+    <div class="header"></div>
+
+    <div class="body">
+        <div class="container">
+            <h2>To Do</h2>
+            <div
+                cdkDropList
+                [cdkDropListData]="todoData"
+                class="list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="box" *ngFor="let item of todoData" cdkDrag>{{item}}</div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <h2>On Doing</h2>
+            <div
+                cdkDropList
+                [cdkDropListData]="onDoingData"
+                class="list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="box" *ngFor="let item of onDoingData" cdkDrag>{{item}}</div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <h2>Done</h2>
+            <div
+                cdkDropList
+                [cdkDropListData]="doneData"
+                class="list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="box" *ngFor="let item of doneData" cdkDrag>{{item}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>
