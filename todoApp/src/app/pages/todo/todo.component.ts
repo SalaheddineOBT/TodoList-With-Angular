@@ -3,6 +3,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FormValidationService } from 'src/app/services/form-validator/form-validation.service';
 import { WidgetService } from 'src/app/services/widget/widget.service';
+import { ITask } from 'src/app/utils/models/task.model';
 
 @Component({
     selector: 'app-todo',
@@ -12,6 +13,10 @@ import { WidgetService } from 'src/app/services/widget/widget.service';
 export class TodoComponent implements OnInit {
 
     task!: FormGroup;
+
+    todoData!: ITask[] ;
+    onDoingData!: ITask[] ;
+    doneData!: ITask[];
 
     constructor(
         private fb: FormBuilder,
@@ -35,11 +40,11 @@ export class TodoComponent implements OnInit {
         });
     }
 
-    todoData = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
-    onDoingData =['Learn Ionic','Learn Angular','Learn English','Create API With C#'];
-    doneData = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+    // todoData = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+    // onDoingData =['Learn Ionic','Learn Angular','Learn English','Create API With C#'];
+    // doneData = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
-    drop(event: CdkDragDrop<string[]>) {
+    drop(event: CdkDragDrop<ITask[]>) {
         if (event.previousContainer === event.container) {
             moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
         } else {
@@ -73,7 +78,7 @@ export class TodoComponent implements OnInit {
 
     AddTask(){
         if(this.task.valid){
-            this.todoData.push(this.task.get('task')?.value);
+            
             this.initForm();
         }else{
             this.widget.Toast('Fill Required Field !','danger');
