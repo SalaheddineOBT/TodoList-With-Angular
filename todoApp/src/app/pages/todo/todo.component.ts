@@ -24,7 +24,8 @@ export class TodoComponent implements OnInit {
             task: [
                 '', 
                 Validators.compose([
-                    Validators.required
+                    Validators.required,
+                    Validators.minLength(5)
                 ])
             ]
         });
