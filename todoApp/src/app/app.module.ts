@@ -11,6 +11,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { NoFoundComponent } from './pages/no-found/no-found.component';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         AppRoutingModule,
         DragDropModule,
         BrowserAnimationsModule,
-        NgbModule
+        NgbModule,
+        MatIconModule
     ],
     providers: [],
     bootstrap: [AppComponent]

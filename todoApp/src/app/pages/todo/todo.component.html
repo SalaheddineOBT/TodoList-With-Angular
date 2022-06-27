@@ -10,7 +10,13 @@
                 [cdkDropListData]="todoData"
                 class="list"
                 (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of todoData" cdkDrag>{{item}}</div>
+                <div class="box" *ngFor="let item of todoData" cdkDrag>
+                    <span>{{item}}</span>
+                    <div class="buttons">
+                        <mat-icon>edit</mat-icon>
+                        <mat-icon>delete</mat-icon>
+                    </div>
+                </div>
             </div>
         </div>
     
@@ -21,7 +27,13 @@
                 [cdkDropListData]="onDoingData"
                 class="list"
                 (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of onDoingData" cdkDrag>{{item}}</div>
+                <div class="box" *ngFor="let item of onDoingData" cdkDrag>
+                    <span>{{item}}</span>
+                    <div class="buttons">
+                        <mat-icon>edit</mat-icon>
+                        <mat-icon>delete</mat-icon>
+                    </div>
+                </div>
             </div>
         </div>
     
@@ -32,7 +44,13 @@
                 [cdkDropListData]="doneData"
                 class="list"
                 (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of doneData" cdkDrag>{{item}}</div>
+                <div class="box" *ngFor="let item of doneData" cdkDrag>
+                    <span>{{item}}</span>
+                    <div class="buttons">
+                        <mat-icon>edit</mat-icon>
+                        <mat-icon>delete</mat-icon>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
