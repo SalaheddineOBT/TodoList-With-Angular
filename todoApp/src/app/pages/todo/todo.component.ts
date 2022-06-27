@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FormValidationService } from 'src/app/services/form-validator/form-validation.service';
+import { WidgetService } from 'src/app/services/widget/widget.service';
 
 @Component({
     selector: 'app-todo',
@@ -14,7 +15,8 @@ export class TodoComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private formValidationService: FormValidationService
+        private formValidationService: FormValidationService,
+        private widget: WidgetService
     ) {
         this.initForm();
     }
@@ -34,7 +36,7 @@ export class TodoComponent implements OnInit {
     }
 
     todoData = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
-    onDoingData =['sdfsdsdsd','cvxvcxccx'];
+    onDoingData =['Learn Ionic','Learn Angular','Learn English','Create API With C#'];
     doneData = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
     drop(event: CdkDragDrop<string[]>) {
@@ -60,5 +62,7 @@ export class TodoComponent implements OnInit {
             this.task
         );
     }
+
+
 
 }

@@ -20,6 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormValidationService } from './services/form-validator/form-validation.service';
+import { WidgetService } from './services/widget/widget.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
     declarations: [
@@ -43,10 +45,12 @@ import { FormValidationService } from './services/form-validator/form-validation
         MatFormFieldModule,
         MatInputModule,
         MatButtonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatSnackBarModule
     ],
     providers: [
-        FormValidationService
+        FormValidationService,
+        WidgetService
     ],
     bootstrap: [AppComponent]
 })

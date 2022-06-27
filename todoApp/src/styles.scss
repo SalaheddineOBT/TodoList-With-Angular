@@ -51,3 +51,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .error{
     color: red;
 }
+
+.success{
+    background-color: #31CC9A;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+
+.warning{
+    background-color: #FEA93F;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+
+.danger{
+    background-color: #D34657;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+
+simple-snack-bar span {
+    margin:auto;
+    text-align: center;
+}
