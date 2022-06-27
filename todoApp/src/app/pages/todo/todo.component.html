@@ -53,7 +53,6 @@
                             <div class="box" *ngFor="let item of onDoingData, let i=index" cdkDrag>
                                 <span>{{item.description}}</span>
                                 <div class="buttons">
-                                    <mat-icon style="color: #0D5B97;cursor: pointer;">edit</mat-icon>
                                     <mat-icon style="color: #0D5B97;margin-left: .5rem;cursor: pointer;">delete</mat-icon>
                                 </div>
                             </div>
@@ -70,8 +69,7 @@
                             <div class="box" *ngFor="let item of doneData, let i=index" cdkDrag>
                                 <span>{{item.description}}</span>
                                 <div class="buttons">
-                                    <mat-icon style="color: #0D5B97;cursor: pointer;">edit</mat-icon>
-                                    <mat-icon style="color: #0D5B97;margin-left: .5rem;cursor: pointer;">delete</mat-icon>
+                                    <mat-icon style="color: #0d9774;">task_alt</mat-icon>
                                 </div>
                             </div>
                         </div>
