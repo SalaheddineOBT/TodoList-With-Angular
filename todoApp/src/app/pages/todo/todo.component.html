@@ -34,7 +34,7 @@
                             class="list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="box" *ngFor="let item of todoData" cdkDrag>
-                                <span>{{item}}</span>
+                                <span>{{item.description}}</span>
                                 <div class="buttons">
                                     <mat-icon style="color: #0D5B97;" (click)="edit()">edit</mat-icon>
                                     <mat-icon style="color: #0D5B97;" (click)="delete()">delete</mat-icon>
@@ -51,7 +51,7 @@
                             class="list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="box" *ngFor="let item of onDoingData" cdkDrag>
-                                <span>{{item}}</span>
+                                <span>{{item.description}}</span>
                                 <div class="buttons">
                                     <mat-icon style="color: #0D5B97;">edit</mat-icon>
                                     <mat-icon style="color: #0D5B97;">delete</mat-icon>
@@ -68,7 +68,7 @@
                             class="list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="box" *ngFor="let item of doneData" cdkDrag>
-                                <span>{{item}}</span>
+                                <span>{{item.description}}</span>
                                 <div class="buttons">
                                     <mat-icon style="color: #0D5B97;">edit</mat-icon>
                                     <mat-icon style="color: #0D5B97;">delete</mat-icon>

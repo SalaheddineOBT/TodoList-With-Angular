@@ -14,9 +14,9 @@ export class TodoComponent implements OnInit {
 
     task!: FormGroup;
 
-    todoData!: ITask[] ;
-    onDoingData!: ITask[] ;
-    doneData!: ITask[];
+    todoData: ITask[] = [];
+    onDoingData: ITask[] = [];
+    doneData: ITask[] = [];
 
     constructor(
         private fb: FormBuilder,
@@ -78,7 +78,10 @@ export class TodoComponent implements OnInit {
 
     AddTask(){
         if(this.task.valid){
-            
+            this.todoData.push({
+                description: this.task.get('task')?.value,
+                done: false
+            })
             this.initForm();
         }else{
             this.widget.Toast('Fill Required Field !','danger');
