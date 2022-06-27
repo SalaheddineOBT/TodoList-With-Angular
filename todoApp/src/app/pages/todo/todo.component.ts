@@ -68,12 +68,15 @@ export class TodoComponent implements OnInit {
         );
     }
 
-    delete(){
-        alert('hil')
+    async delete(index: number){
+        const m = await this.widget.ConfirmAlert('its question test ?');
+        if(m){
+            this.todoData.splice(index,1);
+        }
     }
 
-    edit(){
-        alert('hil')
+    edit(index: number){
+        this.todoData[index].description = this.task.get('task')?.value;
     }
 
     AddTask(){
