@@ -13,7 +13,11 @@ import { DragDropModule} from '@angular/cdk/drag-drop';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     declarations: [
@@ -32,7 +36,11 @@ import { MatToolbarModule } from '@angular/material/toolbar'
         BrowserAnimationsModule,
         NgbModule,
         MatIconModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule
     ],
     providers: [],
     bootstrap: [AppComponent]

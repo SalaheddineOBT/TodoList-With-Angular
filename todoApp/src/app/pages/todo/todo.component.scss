@@ -61,3 +61,7 @@
 .list.cdk-drop-list-dragging .box:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+:host mat-form-field{
+    width: 100%;
+}
