@@ -1,65 +1,6 @@
-<!-- <div cdkDropListGroup class="container-parent">
-
-    <div class="header"></div>
-
-    <div class="body">
-        <div class="container">
-            <h2>To Do</h2>
-            <div
-                cdkDropList
-                [cdkDropListData]="todoData"
-                class="list"
-                (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of todoData" cdkDrag>
-                    <span>{{item}}</span>
-                    <div class="buttons">
-                        <mat-icon>edit</mat-icon>
-                        <mat-icon>delete</mat-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container">
-            <h2>On Doing</h2>
-            <div
-                cdkDropList
-                [cdkDropListData]="onDoingData"
-                class="list"
-                (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of onDoingData" cdkDrag>
-                    <span>{{item}}</span>
-                    <div class="buttons">
-                        <mat-icon>edit</mat-icon>
-                        <mat-icon>delete</mat-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container">
-            <h2>Done</h2>
-            <div
-                cdkDropList
-                [cdkDropListData]="doneData"
-                class="list"
-                (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of doneData" cdkDrag>
-                    <span>{{item}}</span>
-                    <div class="buttons">
-                        <mat-icon>edit</mat-icon>
-                        <mat-icon>delete</mat-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div> -->
-
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3" style="background-color: #0D5B97;height: 94vh;padding-top: 1rem;">
+        <div class="col-lg-3 col-md-6 col-sm-12" style="padding: 2rem;margin-bottom: 1rem;margin-top: 1rem;">
             <div>
                 <mat-card>
                     <div class="card-header">
@@ -76,14 +17,67 @@
                                 {{ getErrorMessage("task") }}
                             </span>
                         </div>
-                        <button mat-flat-button type="button" style="background: #0D5B97;color: white;">Add Task</button>
+                        <button mat-flat-button type="button" style="margin-bottom: 1rem;" style="background: #0D5B97;color: white;">Add Task</button>
                     </form>
                 </mat-card>
             </div>
         </div>
 
-        <div class="col-md-9">
+        <div class="containe col-lg-9 col-md-6 col-sm-12">
+            <div cdkDropListGroup class="container-fluid">
+                <div class="row">
+                    <div class="cont col-md-4">
+                        <h2>To Do</h2>
+                        <div
+                            cdkDropList
+                            [cdkDropListData]="todoData"
+                            class="list"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="box" *ngFor="let item of todoData" cdkDrag>
+                                <span>{{item}}</span>
+                                <div class="buttons">
+                                    <mat-icon style="color: #0D5B97;">edit</mat-icon>
+                                    <mat-icon style="color: #0D5B97;">delete</mat-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="cont col-md-4">
+                        <h2>On Doing</h2>
+                        <div
+                            cdkDropList
+                            [cdkDropListData]="onDoingData"
+                            class="list"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="box" *ngFor="let item of onDoingData" cdkDrag>
+                                <span>{{item}}</span>
+                                <div class="buttons">
+                                    <mat-icon style="color: #0D5B97;">edit</mat-icon>
+                                    <mat-icon style="color: #0D5B97;">delete</mat-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cont col-md-4">
+                        <h2>Done</h2>
+                        <div
+                            cdkDropList
+                            [cdkDropListData]="doneData"
+                            class="list"
+                            (cdkDropListDropped)="drop($event)">
+                            <div class="box" *ngFor="let item of doneData" cdkDrag>
+                                <span>{{item}}</span>
+                                <div class="buttons">
+                                    <mat-icon style="color: #0D5B97;">edit</mat-icon>
+                                    <mat-icon style="color: #0D5B97;">delete</mat-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,27 +1,36 @@
-.container-parent{
+.container-fluid{
+    background-color: #eee;
+    min-height: 100%;
+}
+
+.cont {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+
+    .list {
+        border: solid 1px #ccc;
+        min-height: 60px;
+        background: white;
+        border-radius: 4px;
+        overflow: hidden;
+        display: block;
+    }
+
+}
+
+.containe{
     display: flex;
     align-items: center;
-    height: 100vh;
     justify-content: center;
 
-    .container {
-        width: 400px;
-        max-width: 100%;
-        margin: 0 25px 25px 0;
-        display: inline-block;
-        vertical-align: top;
-    
-        .list {
-            border: solid 1px #ccc;
-            min-height: 60px;
-            background: white;
-            border-radius: 4px;
-            overflow: hidden;
-            display: block;
-        }
-        
+    .row{
+        padding-top: 2rem;
+        display: flex;
+        justify-content: center;
     }
-    
 }
 
 .box {
@@ -80,6 +89,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 0;
 
     h5{
         font-weight: 600;
