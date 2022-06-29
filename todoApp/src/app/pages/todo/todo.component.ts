@@ -79,15 +79,20 @@ export class TodoComponent implements OnInit {
         }
     }
 
+    toogle(index: any) {
+        this.todoData[index].isUpdate = true;
+    }
+
     edit(index: number){
-        this.todoData[index].description = this.task.get('task')?.value;
+        //this.todoData[index].description = this.task.get('task')?.value;
     }
 
     AddTask(){
         if(this.task.valid){
             this.todoData.push({
                 description: this.task.get('task')?.value,
-                done: false
+                done: false,
+                isUpdate: false
             })
             this.initForm();
         }else{

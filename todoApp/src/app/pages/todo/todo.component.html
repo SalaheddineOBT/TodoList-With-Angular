@@ -34,10 +34,19 @@
                             class="list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="box" *ngFor="let item of todoData,let i=index" cdkDrag>
-                                <span>{{item.description}}</span>
-                                <div class="buttons">
-                                    <mat-icon style="color: #0D5B97;cursor: pointer;" (click)="edit(i)">edit</mat-icon>
-                                    <mat-icon style="color: #FF3D4E;margin-left: .5rem;cursor: pointer;" (click)="delete('toDo',i)">delete</mat-icon>
+                                <div style="width: 100%;display: flex; align-items: center;justify-content: space-between;" *ngIf="!item.isUpdate">
+                                    <span>{{item.description}}</span>
+                                    <div class="buttons">
+                                        <mat-icon style="color: #0D5B97;cursor: pointer;" (click)="toogle(i)">edit</mat-icon>
+                                        <mat-icon style="color: #FF3D4E;margin-left: .5rem;cursor: pointer;" (click)="delete('toDo',i)">delete</mat-icon>
+                                    </div>
+                                </div>
+                                <div style="width: 100%;display: flex;align-items: center;justify-content: space-between;" *ngIf="item.isUpdate">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Task Name</mat-label>
+                                        <input matInput value="{{item.description}}"/>
+                                    </mat-form-field>
+                                    <mat-icon style="color: #0D5B97;cursor: pointer; display: flex;align-items: center;justify-content: center;margin-left: 1rem;margin-right: .5rem;" (click)="edit(i)">edit</mat-icon>
                                 </div>
                             </div>
                         </div>
