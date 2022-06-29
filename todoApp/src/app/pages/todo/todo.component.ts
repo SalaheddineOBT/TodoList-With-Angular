@@ -36,6 +36,13 @@ export class TodoComponent implements OnInit {
                     Validators.required,
                     Validators.minLength(5)
                 ])
+            ],
+            UpdatedTask: [
+                '',
+                Validators.compose([
+                    Validators.required,
+                    Validators.minLength(5)
+                ])
             ]
         });
     }
@@ -54,6 +61,9 @@ export class TodoComponent implements OnInit {
                 event.previousIndex,
                 event.currentIndex,
             );
+            this.todoData.map((e: any) => {
+                e.isUpdate = false;
+            });
         }
     }
 
@@ -81,17 +91,28 @@ export class TodoComponent implements OnInit {
 
     toogle(index: any) {
         this.todoData[index].isUpdate = true;
+        this.task.get('UpdatedTask')?.setValue(this.todoData[index].description);
     }
 
-    edit(index: number){
-        //this.todoData[index].description = this.task.get('task')?.value;
-        this.todoData[index].isUpdate = false;
+    async edit(index: number){
+        let value = this.task.get('UpdatedTask')?.value;
+        if(value){
+            // const m = await this.widget.ConfirmAlert('Are You Sure You Want To Update This Task ?');
+            // if(m){
+            //     this.todoData[index].description = value;
+            //     this.todoData[index].isUpdate = false;
+            // }
+
+            this.todoData[index].description = value;
+            this.todoData[index].isUpdate = false;
+        }
     }
 
     AddTask(){
-        if(this.task.valid){
+        let value = this.task.get('task')?.value;
+        if(value){
             this.todoData.push({
-                description: this.task.get('task')?.value,
+                description: value,
                 done: false,
                 isUpdate: false
             })
