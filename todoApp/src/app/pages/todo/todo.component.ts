@@ -14,19 +14,30 @@ export class TodoComponent implements OnInit {
 
     task!: FormGroup;
 
-    todoData: ITask[] = [];
-    onDoingData: ITask[] = [];
-    doneData: ITask[] = [];
+    tasks: any;
+
+    todoData!: ITask[];
+    onDoingData!: ITask[];
+    doneData!: ITask[];
 
     constructor(
         private fb: FormBuilder,
         private formValidationService: FormValidationService,
         private widget: WidgetService
     ) {
+        this.initData()
         this.initForm();
     }
 
     ngOnInit(): void { }
+
+    initData(){
+        let d = localStorage.getItem('data') || '' ;
+        this.tasks = JSON.parse(d);
+        this.todoData = this.tasks.todo;
+        this.onDoingData = this.tasks.ondoing;
+        this.doneData = this.tasks.done;
+    }
 
     initForm(){
         this.task = this.fb.group({
@@ -65,6 +76,11 @@ export class TodoComponent implements OnInit {
                 e.isUpdate = false;
             });
         }
+        localStorage.setItem('data',JSON.stringify({
+            todo: this.todoData,
+            ondoing: this.onDoingData,
+            done: this.doneData
+        }));
     }
 
     fieldHasError(fieldName: string) {
@@ -86,6 +102,11 @@ export class TodoComponent implements OnInit {
             }else if(where === "onDoing") {
                 this.onDoingData.splice(index,1);
             }
+            localStorage.setItem('data',JSON.stringify({
+                todo: this.todoData,
+                ondoing: this.onDoingData,
+                done: this.doneData
+            }));
         }
     }
 
@@ -105,6 +126,13 @@ export class TodoComponent implements OnInit {
 
             this.todoData[index].description = value;
             this.todoData[index].isUpdate = false;
+            
+            localStorage.setItem('data',JSON.stringify({
+                todo: this.todoData,
+                ondoing: this.onDoingData,
+                done: this.doneData
+            }));
+            
             this.widget.Alert('Successful Update !','Your task updated successfully','success');
 
         }
@@ -117,7 +145,12 @@ export class TodoComponent implements OnInit {
                 description: value,
                 done: false,
                 isUpdate: false
-            })
+            });
+            localStorage.setItem('data',JSON.stringify({
+                todo: this.todoData,
+                ondoing: this.onDoingData,
+                done: this.doneData
+            }));
             this.initForm();
         }else{
             this.widget.Toast('Fill Required Field !','danger');
