@@ -67,6 +67,7 @@
                             <div class="box" *ngFor="let item of onDoingData, let i=index" cdkDrag>
                                 <span>{{item.description}}</span>
                                 <div class="buttons">
+                                    <mat-icon style="color: #07446A;">currency_exchange</mat-icon>
                                     <mat-icon style="color: #FF3D4E;margin-left: .5rem;cursor: pointer;" (click)="delete('onDoing',i)">delete</mat-icon>
                                 </div>
                             </div>
@@ -83,6 +84,7 @@
                             <div class="box" *ngFor="let item of pauseData, let i=index" cdkDrag>
                                 <span>{{item.description}}</span>
                                 <div class="buttons">
+                                    <mat-icon style="color: #0FBCDA;">motion_photos_paused</mat-icon>
                                     <mat-icon style="color: #FF3D4E;margin-left: .5rem;cursor: pointer;" (click)="delete('Pause',i)">delete</mat-icon>
                                 </div>
                             </div>

@@ -16,10 +16,10 @@ export class TodoComponent implements OnInit {
 
     tasks: any;
 
-    todoData!: ITask[];
-    onDoingData!: ITask[];
-    doneData!: ITask[];
-    pauseData!: ITask[];
+    todoData: ITask[] = [];
+    onDoingData: ITask[] =[];
+    doneData: ITask[]=[];
+    pauseData: ITask[]=[];
 
     constructor(
         private fb: FormBuilder,
