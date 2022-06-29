@@ -85,6 +85,7 @@ export class TodoComponent implements OnInit {
 
     edit(index: number){
         //this.todoData[index].description = this.task.get('task')?.value;
+        this.todoData[index].isUpdate = false;
     }
 
     AddTask(){
