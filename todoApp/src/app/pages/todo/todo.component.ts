@@ -105,6 +105,8 @@ export class TodoComponent implements OnInit {
 
             this.todoData[index].description = value;
             this.todoData[index].isUpdate = false;
+            this.widget.Alert('Successful Update !','Your task updated successfully','success');
+
         }
     }
 

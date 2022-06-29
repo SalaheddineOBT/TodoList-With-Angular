@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div style="width: 100%;display: flex;align-items: center;justify-content: space-between;" *ngIf="item.isUpdate">
-                                    <div style="width: 85%;">
+                                    <div style="width: 100%;">
                                         <mat-form-field appearance="outline" [formGroup]="task">
                                             <mat-label>Task Name</mat-label>
                                             <input matInput value="{{item.description}}" formControlName = "UpdatedTask"/>
@@ -51,7 +51,7 @@
                                             {{ getErrorMessage("UpdatedTask") }}
                                         </span>
                                     </div>
-                                    <mat-icon style="color: #0D5B97;cursor: pointer; display: flex;align-items: center;justify-content: center;margin-left: .5rem;" (click)="edit(i)">edit</mat-icon>
+                                    <mat-icon style="color: #0D5B97;font-size: 2.2rem;cursor: pointer; display: flex;align-items: center;justify-content: center;margin-left: 1.5rem;margin-right: .5rem;" (click)="edit(i)">check</mat-icon>
                                 </div>
                             </div>
                         </div>
