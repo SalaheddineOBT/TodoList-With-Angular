@@ -19,6 +19,7 @@ export class TodoComponent implements OnInit {
     todoData!: ITask[];
     onDoingData!: ITask[];
     doneData!: ITask[];
+    pauseData!: ITask[];
 
     constructor(
         private fb: FormBuilder,
@@ -37,6 +38,7 @@ export class TodoComponent implements OnInit {
         this.todoData = this.tasks.todo;
         this.onDoingData = this.tasks.ondoing;
         this.doneData = this.tasks.done;
+        this.pauseData = this.tasks.pause
     }
 
     initForm(){
@@ -79,7 +81,8 @@ export class TodoComponent implements OnInit {
         localStorage.setItem('data',JSON.stringify({
             todo: this.todoData,
             ondoing: this.onDoingData,
-            done: this.doneData
+            done: this.doneData,
+            pause: this.pauseData
         }));
     }
 
@@ -111,6 +114,10 @@ export class TodoComponent implements OnInit {
                     this.doneData.splice(index,1);
                     break;
                 }
+                case 'Pause' : {
+                    this.pauseData.splice(index,1);
+                    break;
+                }
                 default: {
                     break;
                 }
@@ -119,7 +126,8 @@ export class TodoComponent implements OnInit {
             localStorage.setItem('data',JSON.stringify({
                 todo: this.todoData,
                 ondoing: this.onDoingData,
-                done: this.doneData
+                done: this.doneData,
+                pause: this.pauseData
             }));
         }
     }
@@ -144,7 +152,8 @@ export class TodoComponent implements OnInit {
             localStorage.setItem('data',JSON.stringify({
                 todo: this.todoData,
                 ondoing: this.onDoingData,
-                done: this.doneData
+                done: this.doneData,
+                pause: this.pauseData
             }));
             
             this.widget.Alert('Successful Update !','Your task updated successfully','success');
@@ -163,7 +172,8 @@ export class TodoComponent implements OnInit {
             localStorage.setItem('data',JSON.stringify({
                 todo: this.todoData,
                 ondoing: this.onDoingData,
-                done: this.doneData
+                done: this.doneData,
+                pause: this.pauseData
             }));
             this.initForm();
         }else{
