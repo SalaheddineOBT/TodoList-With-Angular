@@ -97,11 +97,25 @@ export class TodoComponent implements OnInit {
     async delete(where:string,index: number){
         const m = await this.widget.ConfirmAlert('Are You Sure You Want To Delete This Task ?');
         if(m){
-            if(where === "toDo"){
-                this.todoData.splice(index,1);
-            }else if(where === "onDoing") {
-                this.onDoingData.splice(index,1);
+            
+            switch(where){
+                case 'toDo' : {
+                    this.todoData.splice(index,1);
+                    break;
+                }
+                case 'onDoing' : {
+                    this.onDoingData.splice(index,1);
+                    break;
+                }
+                case 'Done' : {
+                    this.doneData.splice(index,1);
+                    break;
+                }
+                default: {
+                    break;
+                }
             }
+
             localStorage.setItem('data',JSON.stringify({
                 todo: this.todoData,
                 ondoing: this.onDoingData,
