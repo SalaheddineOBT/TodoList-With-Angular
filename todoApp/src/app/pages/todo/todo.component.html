@@ -34,7 +34,7 @@
                             (cdkDropListDropped)="drop($event)">
                             <div class="box" *ngFor="let item of todoData,let i=index" cdkDrag>
                                 <div style="width: 100%;display: flex; align-items: center;justify-content: space-between;" *ngIf="!item.isUpdate">
-                                    <span>{{item.description}}</span>
+                                    <span style="width: 12rem;">{{item.description}}</span>
                                     <div class="buttons">
                                         <mat-icon style="color: #0D5B97;cursor: pointer;" (click)="toogle(i)">edit</mat-icon>
                                         <mat-icon style="color: #FF3D4E;margin-left: .5rem;cursor: pointer;" (click)="delete('toDo',i)">delete</mat-icon>
@@ -63,7 +63,7 @@
                             class="list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="box" *ngFor="let item of onDoingData, let i=index" cdkDrag>
-                                <span>{{item.description}}</span>
+                                <span style="width: 12rem;">{{item.description}}</span>
                                 <div class="buttons">
                                     <mat-icon style="color: #07446A;">currency_exchange</mat-icon>
                                     <mat-icon style="color: #FF3D4E;margin-left: .5rem;cursor: pointer;" (click)="delete('onDoing',i)">delete</mat-icon>
@@ -79,7 +79,7 @@
                             class="list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="box" *ngFor="let item of pauseData, let i=index" cdkDrag>
-                                <span>{{item.description}}</span>
+                                <span style="width: 12rem;">{{item.description}}</span>
                                 <div class="buttons">
                                     <mat-icon style="color: #0FBCDA;">motion_photos_paused</mat-icon>
                                     <mat-icon style="color: #FF3D4E;margin-left: .5rem;cursor: pointer;" (click)="delete('Pause',i)">delete</mat-icon>
@@ -95,7 +95,7 @@
                             class="list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="box" *ngFor="let item of doneData, let i=index" cdkDrag>
-                                <span>{{item.description}}</span>
+                                <span style="width: 12rem;">{{item.description}}</span>
                                 <div class="buttons">
                                     <mat-icon style="color: #0d9774;">task_alt</mat-icon>
                                     <mat-icon style="color: #FF3D4E;margin-left: .5rem;cursor: pointer;" (click)="delete('Done',i)">delete</mat-icon>
